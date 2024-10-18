@@ -9,9 +9,9 @@ dg8-ggg-ggg-gd1-gd2-gd2-dg6-dg5-\
 dg7-dg6-gd2-dg5-ddd-ddd-ddd-ddd-\
 ddd-ddd-ddd-ddd-ddd-ddd-ddd-ddd-";
 var TILEMAP = {
-  'dg1-': [0,  0], 'dg2-': [1,  0], 'dg3-': [2,  0], 'gd1-': [3,  0], 'gd2-': [4,  0], 'gd3-': [5,  0],
-  'dg8-': [0,  1], 'ggg-': [1,  1], 'dg4-': [2,  1], 'gd8-': [3,  1], 'ddd-': [4,  1], 'gd4-': [5,  1],
-  'dg7-': [0,  2], 'dg6-': [1,  2], 'dg5-': [2,  2], 'gd7-': [3,  2], 'gd6-': [4,  2], 'gd5-': [5,  2],
+  'dg1-': [0,  0], 'dg2-': [1,  0], 'dg3-': [2,  0], 'gd1-': [3,  0], 'gd2-': [4,  0], 'gd3-': [5,  0], '----': [6,  0], '----': [7,  0], '----': [8,  0], '----': [9,  0], '----': [10,  0], '----': [11,  0],
+  'dg8-': [0,  1], 'ggg-': [1,  1], 'dg4-': [2,  1], 'gd8-': [3,  1], 'ddd-': [4,  1], 'gd4-': [5,  1], '----': [6,  1], '----': [7,  1], '----': [8,  1], '----': [9,  1], '----': [10,  1], '----': [11,  1],
+  'dg7-': [0,  2], 'dg6-': [1,  2], 'dg5-': [2,  2], 'gd7-': [3,  2], 'gd6-': [4,  2], 'gd5-': [5,  2], '----': [6,  2], '----': [7,  2], '----': [8,  2], '----': [9,  2], '----': [10,  2], '----': [11,  2],
   'sr1-': [0,  3], 'sr2-': [1,  3], 'sr3-': [2,  3], 'rs1-': [3,  3], 'rs2-': [4,  3], 'rs3-': [5,  3], 'sd1-': [6,  3], 'sd2-': [7,  3], 'sd3-': [8,  3], 'ds1-': [9,  3], 'ds2-': [10,  3], 'ds3-': [11,  3],
   'sr8-': [0,  4], 'rrr-': [1,  4], 'sr4-': [2,  4], 'rs8-': [3,  4], 'sss-': [4,  4], 'rs4-': [5,  4], 'sd8-': [6,  4], 'ddx-': [7,  4], 'sd4-': [8,  4], 'ds8-': [9,  4], 'ssx-': [10,  4], 'ds4-': [11,  4],
   'sr7-': [0,  5], 'sr6-': [1,  5], 'sr5-': [2 , 5], 'rs7-': [3,  5], 'rs6-': [4,  5], 'rs5-': [5,  5], 'sd7-': [6,  5], 'sd6-': [7,  5], 'sd5-': [8,  5], 'ds7-': [9,  5], 'ds6-': [10,  5], 'ds5-': [11,  5],
@@ -26,7 +26,8 @@ var TILEMAP = {
 var canvas = document.getElementById('canvas'),
   ctx = canvas.getContext('2d'),
   tileset = new Image(),
-  tileset.src = "tileset.png";
+  tileset.src = "tileset.png",
+  TILESET = tileset;
 
 function printTile(tilex, tiley, printx, printy) {
   ctx.drawImage(TILESET, tilex * TILESIZE, tiley * TILESIZE, TILESIZE, TILESIZE, printx, printy, canvas.width / CANVASWIDTH, canvas.height / CANVASHEIGHT);
@@ -47,4 +48,4 @@ function printMap() {
     }
   }
 }
-printMap()
+printMap();
